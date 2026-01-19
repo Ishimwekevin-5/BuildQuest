@@ -2,15 +2,15 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
 export class GeminiService {
-  private ai: GoogleGenAI;
-
-  constructor() {
-    this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-  }
-
+  /**
+   * Generates project advice based on a description.
+   * Instantiates GoogleGenAI right before the call as per guidelines.
+   */
   async getProjectAdvice(projectDescription: string) {
+    // Always use new GoogleGenAI({ apiKey: process.env.API_KEY }) right before making an API call.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     try {
-      const response = await this.ai.models.generateContent({
+      const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `I am starting a construction project: "${projectDescription}". Provide detailed advice in JSON format.`,
         config: {
@@ -41,19 +41,31 @@ export class GeminiService {
           }
         }
       });
-      return JSON.parse(response.text);
+      
+      // The text property returns the generated string directly (do not call as a method).
+      const text = response.text;
+      if (!text) {
+        throw new Error("AI returned an empty response.");
+      }
+      return JSON.parse(text);
     } catch (error) {
       console.error("Gemini Error:", error);
       throw error;
     }
   }
 
+  /**
+   * Searches for engineers matching a query.
+   * Instantiates GoogleGenAI right before the call as per guidelines.
+   */
   async searchEngineers(query: string) {
-    // Intelligent search logic could go here
-    const response = await this.ai.models.generateContent({
+    // Create a new GoogleGenAI instance right before making an API call to ensure current key usage.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Find engineers matching this request: "${query}". Return a short summary of what to look for.`
     });
+    // Use the .text property to access the result.
     return response.text;
   }
 }
