@@ -1,0 +1,7 @@
+{
+  "name": "BuildQuest",
+  "description": "A premier marketplace for construction professionals, heavy machinery, and prime land plots, featuring an AI-driven project advisor.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
