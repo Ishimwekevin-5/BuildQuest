@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
-import { Sparkles, Loader2, HardHat, Tractor, Mountain, Calendar, ArrowRight } from 'lucide-react';
+import { Sparkles, Loader2, HardHat, Tractor, Mountain, Calendar, ArrowRight, ExternalLink, Shield } from 'lucide-react';
 import { geminiService } from '../services/geminiService';
 import { AdvisorSuggestion } from '../types';
 
 const ProjectAdvisor: React.FC = () => {
-  const [description, setDescription] = useState('');
+  const [description, setSearchDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [suggestion, setSuggestion] = useState<AdvisorSuggestion | null>(null);
 
@@ -25,8 +25,35 @@ const ProjectAdvisor: React.FC = () => {
   };
 
   return (
-    <div className="bg-black min-h-screen text-white">
+    <div className="bg-black min-h-screen text-white selection:bg-white selection:text-black">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        
+        {/* Irembo Integration Alert */}
+        <div className="mb-16 border border-white/40 p-8 bg-white/5 animate-pulse-slow">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="bg-white p-2 shrink-0">
+                <Shield className="text-black w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] mb-1">Upcoming Integration</h4>
+                <p className="text-xs font-bold uppercase tracking-widest leading-relaxed text-white/80">
+                  Irembo Land Services Are Being Integrated Soon. <br className="hidden md:block" />
+                  Our AI Land Development Engineer Will Be Able to operate The Tasks on Your Behalf.
+                </p>
+              </div>
+            </div>
+            <a 
+              href="https://support.irembo.gov.rw/en/support/solutions/47000523309" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-[10px] font-black uppercase tracking-widest border border-white px-4 py-2 hover:bg-white hover:text-black transition-all group shrink-0"
+            >
+              Read Land Services <ExternalLink className="ml-2 w-3 h-3 group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
+        </div>
+
         <div className="text-center mb-24">
           <div className="inline-block p-4 border border-white mb-8">
             <Sparkles className="text-white w-8 h-8" />
@@ -42,7 +69,7 @@ const ProjectAdvisor: React.FC = () => {
               className="w-full h-56 p-8 bg-black border border-white/20 text-sm font-medium focus:ring-1 focus:ring-white outline-none transition-all resize-none text-white placeholder:text-white/10"
               placeholder="E.G. PLANNING SUSTAINABLE HIGH-RISE DEVELOPMENT IN URBAN DENSITY AREA..."
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setSearchDescription(e.target.value)}
             />
             <div className="mt-8">
               <button 

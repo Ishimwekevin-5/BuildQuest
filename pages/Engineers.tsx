@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { Star, MapPin, Search, LayoutGrid, Map as MapIcon, X, Briefcase, Award, Clock, Phone, Mail, ChevronRight, CheckCircle, Timer } from 'lucide-react';
+import { Star, MapPin, Search, LayoutGrid, Map as MapIcon, X, Briefcase, Mail, Phone, CheckCircle, Timer } from 'lucide-react';
 import { ENGINEERS } from '../constants';
 import MapView from '../components/MapView';
 import { Engineer } from '../types';
@@ -86,7 +86,7 @@ const Engineers: React.FC = () => {
                     ★ {engineer.rating.toFixed(1)}
                   </div>
                   <div className={`absolute bottom-4 left-4 px-3 py-1 text-[8px] font-black uppercase tracking-widest border border-white/20 shadow-lg ${
-                    engineer.availability === 'Available' ? 'bg-black text-white group-hover:bg-black group-hover:text-white' : 'bg-white/20 text-white/40'
+                    engineer.availability === 'Available' ? 'bg-black text-white group-hover:bg-black group-hover:text-white' : 'bg-white/20 text-white/40 group-hover:text-black/40'
                   }`}>
                     {engineer.availability}
                   </div>
@@ -129,7 +129,6 @@ const Engineers: React.FC = () => {
         )}
       </div>
 
-      {/* Side Panel */}
       <div 
         className={`fixed inset-y-0 right-0 w-full md:w-[500px] bg-black border-l border-white/20 z-[60] transform transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
           selectedEngineerId ? 'translate-x-0' : 'translate-x-full'
@@ -186,7 +185,7 @@ const Engineers: React.FC = () => {
                   <Mail className="w-4 h-4 mr-4 text-white/40" /> contact@buildquest.io
                 </div>
                 <div className="flex items-center text-sm font-bold uppercase tracking-widest text-white/80">
-                  <Phone className="w-4 h-4 mr-4 text-white/40" /> +1 (555) 900 0000
+                  <Phone className="w-4 h-4 mr-4 text-white/40" /> +1 (555) 000 0000
                 </div>
               </div>
             </div>
