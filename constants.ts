@@ -75,9 +75,18 @@ export const LAND_PLOTS: LandPlot[] = [
     id: 'l1',
     title: 'Sunnyvale Heights Lot',
     area: '0.5 Acres',
-    price: 0,
+    price: 450000,
     location: 'Sunnyvale, CA',
+    exactLocation: '1242 Wolters Rd, Near El Camino Real',
+    landmarks: ['Sunnyvale Health Center', 'Apple Park (2mi)', 'Lawrence Expressway'],
     zoning: 'Residential',
+    documentStatus: 'Verified',
+    agent: {
+      name: 'David Vane',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 408 555 0122',
+      role: 'Senior Portfolio Manager'
+    },
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600',
     coordinates: { lat: 37.3688, lng: -122.0363 }
   },
@@ -85,9 +94,18 @@ export const LAND_PLOTS: LandPlot[] = [
     id: 'l2',
     title: 'Industrial Gateway Plot',
     area: '5.2 Acres',
-    price: 0,
+    price: 1250000,
     location: 'Houston, TX',
+    exactLocation: 'Port Terminal District, Block 42',
+    landmarks: ['Port of Houston', 'Beltway 8 Interchange', 'Memorial Hermann Hospital'],
     zoning: 'Industrial',
+    documentStatus: 'Verified',
+    agent: {
+      name: 'Sarah Jenkins',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 713 555 0199',
+      role: 'Industrial Specialist'
+    },
     image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=600',
     coordinates: { lat: 29.7604, lng: -95.3698 }
   },
@@ -95,9 +113,18 @@ export const LAND_PLOTS: LandPlot[] = [
     id: 'l3',
     title: 'Retail Corner Lot',
     area: '1.1 Acres',
-    price: 0,
+    price: 890000,
     location: 'Denver, CO',
+    exactLocation: 'S Broadway & W Mississippi Ave',
+    landmarks: ['South Broadway Market', 'Platte River Trail', 'Denver Health'],
     zoning: 'Commercial',
+    documentStatus: 'Pending',
+    agent: {
+      name: 'Robert Stark',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 303 555 0145',
+      role: 'Commercial Land Agent'
+    },
     image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600',
     coordinates: { lat: 39.7392, lng: -104.9903 }
   }

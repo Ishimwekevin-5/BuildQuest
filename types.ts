@@ -33,13 +33,24 @@ export interface Equipment {
   specs: string[];
 }
 
+export interface Agent {
+  name: string;
+  image: string;
+  phone: string;
+  role: string;
+}
+
 export interface LandPlot {
   id: string;
   title: string;
   area: string;
   price: number;
   location: string;
+  exactLocation: string;
+  landmarks: string[];
   zoning: 'Residential' | 'Commercial' | 'Industrial' | 'Agricultural';
+  documentStatus: 'Verified' | 'Pending' | 'Disputed';
+  agent: Agent;
   image: string;
   coordinates: Coordinates;
 }
