@@ -1,4 +1,3 @@
-
 export enum Category {
   Engineers = 'engineers',
   Equipment = 'equipment',
@@ -23,6 +22,13 @@ export interface Engineer {
   availability: 'Available' | 'On Project';
 }
 
+export interface Owner {
+  name: string;
+  image: string;
+  phone: string;
+  company: string;
+}
+
 export interface Equipment {
   id: string;
   name: string;
@@ -31,6 +37,8 @@ export interface Equipment {
   availability: boolean;
   image: string;
   specs: string[];
+  description?: string;
+  owner?: Owner;
 }
 
 export interface Agent {

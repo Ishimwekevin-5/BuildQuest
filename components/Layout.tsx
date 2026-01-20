@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HardHat, Tractor, Mountain, MessageSquareCode, Menu } from 'lucide-react';
@@ -87,14 +86,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>
               <h4 className="text-white font-bold uppercase text-xs tracking-widest mb-6">Information</h4>
               <ul className="space-y-4 text-sm font-medium">
-                <li><a href="#" className="text-white/60 hover:text-white transition-colors">Project Advisor</a></li>
+                <li><Link to="/advisor" className="text-white/60 hover:text-white transition-colors">Project Advisor</Link></li>
                 <li><a href="#" className="text-white/60 hover:text-white transition-colors">Safety Protocols</a></li>
                 <li><a href="#" className="text-white/60 hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/5 mt-16 pt-8 text-center text-[10px] text-white/40 font-bold uppercase tracking-[0.2em]">
-            © BuildQuest Logistics — Established 2024
+            © BuildQuest Logistics — Established 2026
           </div>
         </div>
       </footer>

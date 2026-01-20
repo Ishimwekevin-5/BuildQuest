@@ -1,4 +1,3 @@
-
 import { Engineer, Equipment, LandPlot } from './types';
 
 export const ENGINEERS: Engineer[] = [
@@ -6,9 +5,9 @@ export const ENGINEERS: Engineer[] = [
     id: 'e1',
     name: 'Sarah Chen',
     specialty: 'Structural Engineer',
-    experience: 0,
-    rating: 0.0,
-    hourlyRate: 0,
+    experience: 12,
+    rating: 4.9,
+    hourlyRate: 150,
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
     location: 'San Francisco, CA',
     coordinates: { lat: 37.7749, lng: -122.4194 },
@@ -18,9 +17,9 @@ export const ENGINEERS: Engineer[] = [
     id: 'e2',
     name: 'Marcus Thorne',
     specialty: 'Civil Engineer',
-    experience: 0,
-    rating: 0.0,
-    hourlyRate: 0,
+    experience: 15,
+    rating: 4.8,
+    hourlyRate: 185,
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
     location: 'Austin, TX',
     coordinates: { lat: 30.2672, lng: -97.7431 },
@@ -30,9 +29,9 @@ export const ENGINEERS: Engineer[] = [
     id: 'e3',
     name: 'Elena Rodriguez',
     specialty: 'Architectural Engineer',
-    experience: 0,
-    rating: 0.0,
-    hourlyRate: 0,
+    experience: 8,
+    rating: 5.0,
+    hourlyRate: 165,
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
     location: 'Miami, FL',
     coordinates: { lat: 25.7617, lng: -80.1918 },
@@ -45,28 +44,49 @@ export const EQUIPMENT: Equipment[] = [
     id: 'eq1',
     name: 'Caterpillar 320 Excavator',
     type: 'Earthmoving',
-    dailyRate: 0,
+    dailyRate: 1200,
     availability: true,
     image: 'https://images.unsplash.com/photo-1541625602330-2277a4c4b08d?auto=format&fit=crop&q=80&w=600',
-    specs: ['20 Ton Operating Weight', '1.2m3 Bucket Capacity', 'Diesel Engine']
+    specs: ['20 Ton Operating Weight', '1.2m3 Bucket Capacity', 'Diesel Engine', 'Tier 4 Final Engine'],
+    description: 'The Cat 320 brings premium performance with simple-to-use technologies like Cat GRADE with 2D, Grade Assist, and Payload — all standard equipment from the factory to boost your operator efficiency up to 45%.',
+    owner: {
+      name: 'John Miller',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 415 555 0198',
+      company: 'Miller Heavy Rentals'
+    }
   },
   {
     id: 'eq2',
     name: 'Liebherr LTM 1100 Crane',
     type: 'Lifting',
-    dailyRate: 0,
+    dailyRate: 4500,
     availability: false,
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=600',
-    specs: ['100 Ton Lifting Capacity', '60m Max Hook Height', 'All-terrain']
+    specs: ['100 Ton Lifting Capacity', '60m Max Hook Height', 'All-terrain', 'VarioBallast Technology'],
+    description: 'The LTM 1100-5.2 mobile crane is the most compact 5-axle crane in the world. Its long telescopic boom can be extended with additional lattice jibs and a double folding jib.',
+    owner: {
+      name: 'Angela Rossi',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 512 555 0122',
+      company: 'Apex Lifting Solutions'
+    }
   },
   {
     id: 'eq3',
     name: 'Bobcat T76 Compact Loader',
     type: 'Compact',
-    dailyRate: 0,
+    dailyRate: 650,
     availability: true,
     image: 'https://images.unsplash.com/photo-1590234797703-81206899f11a?auto=format&fit=crop&q=80&w=600',
-    specs: ['Vertical Lift Path', '74 HP Engine', 'Rubber Tracks']
+    specs: ['Vertical Lift Path', '74 HP Engine', 'Rubber Tracks', 'Premium Cab with AC'],
+    description: 'The Bobcat® T76 compact track loader is engineered to deliver more usable horsepower and better overall performance so you can complete bigger jobs in less time.',
+    owner: {
+      name: 'Tom Hudson',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=100',
+      phone: '+1 305 555 0187',
+      company: 'Hudson Compact Fleet'
+    }
   }
 ];
 
