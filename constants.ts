@@ -149,3 +149,11 @@ export const LAND_PLOTS: LandPlot[] = [
     coordinates: { lat: 39.7392, lng: -104.9903 }
   }
 ];
+
+export const LAND_NEWS = [
+  "New industrial zoning approved for Houston Port Terminal District.",
+  "Sunnyvale Heights Lot price updated: Now $450,000.",
+  "BuildQuest announces new AI-driven land valuation tool.",
+  "Commercial interest rises in Denver's South Broadway corridor.",
+  "Global construction logistics index reaches record high in Q1 2026."
+];

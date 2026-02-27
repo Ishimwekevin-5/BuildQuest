@@ -6,6 +6,7 @@ import Engineers from './pages/Engineers';
 import Equipment from './pages/Equipment';
 import LandPlots from './pages/LandPlots';
 import ProjectAdvisor from './pages/ProjectAdvisor';
+import News from './pages/News';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/equipment" element={<Equipment />} />
           <Route path="/landplots" element={<LandPlots />} />
           <Route path="/advisor" element={<ProjectAdvisor />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       </Layout>
     </Router>

@@ -78,6 +78,14 @@
         .tech-flicker-text {
           animation: tech-flicker 8s infinite;
         }
+
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .pause:hover {
+          animation-play-state: paused;
+        }
     </style>
 <script type="importmap">
 {

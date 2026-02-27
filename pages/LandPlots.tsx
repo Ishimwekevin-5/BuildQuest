@@ -200,7 +200,7 @@ const LandPlots: React.FC = () => {
                  </div>
                </div>
                <MapView 
-                  items={[{...plot, subtitle: plot.location}]} 
+                  items={[{...plot, subtitle: plot.location, price: `$${(plot.price/1000).toFixed(0)}K`}]} 
                   center={[plot.coordinates.lat, plot.coordinates.lng]} 
                   zoom={14} 
                />

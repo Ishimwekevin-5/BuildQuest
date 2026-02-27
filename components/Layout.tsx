@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { HardHat, Tractor, Mountain, MessageSquareCode, Menu } from 'lucide-react';
+import { HardHat, Tractor, Mountain, MessageSquareCode, Menu, Newspaper } from 'lucide-react';
+import { LAND_NEWS } from '../constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,10 +15,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Equipment', path: '/equipment', icon: Tractor },
     { name: 'Land Plots', path: '/landplots', icon: Mountain },
     { name: 'AI Advisor', path: '/advisor', icon: MessageSquareCode },
+    { name: 'News', path: '/news', icon: Newspaper },
   ];
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-white selection:text-black bg-black text-white">
+      {/* Land News Ticker */}
+      <Link to="/news" className="bg-white text-black py-1 overflow-hidden whitespace-nowrap border-b border-white/20 block hover:bg-white/90 transition-colors">
+        <div className="inline-block animate-[marquee_30s_linear_infinite] hover:pause">
+          {LAND_NEWS.map((news, i) => (
+            <span key={i} className="mx-8 text-[10px] font-black uppercase tracking-widest inline-flex items-center">
+              <Newspaper className="w-3 h-3 mr-2" /> {news}
+            </span>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {LAND_NEWS.map((news, i) => (
+            <span key={`dup-${i}`} className="mx-8 text-[10px] font-black uppercase tracking-widest inline-flex items-center">
+              <Newspaper className="w-3 h-3 mr-2" /> {news}
+            </span>
+          ))}
+        </div>
+      </Link>
+
       <nav className="bg-black border-b border-white/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 items-center">
