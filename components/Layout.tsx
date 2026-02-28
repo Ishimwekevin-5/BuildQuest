@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { HardHat, Tractor, Mountain, MessageSquareCode, Menu, Newspaper } from 'lucide-react';
+import { HardHat, Tractor, Mountain, MessageSquareCode, Menu, Newspaper, X, Phone, Mail, MessageSquare } from 'lucide-react';
 import { LAND_NEWS } from '../constants';
 
 interface LayoutProps {
@@ -9,6 +9,8 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const navItems = [
     { name: 'Engineers', path: '/engineers', icon: HardHat },
@@ -22,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="min-h-screen flex flex-col selection:bg-white selection:text-black bg-black text-white">
       {/* Land News Ticker */}
       <Link to="/news" className="bg-white text-black py-1 overflow-hidden whitespace-nowrap border-b border-white/20 block hover:bg-white/90 transition-colors">
-        <div className="inline-block animate-[marquee_30s_linear_infinite] hover:pause">
+        <div className="inline-block animate-[marquee_90s_linear_infinite] hover:pause">
           {LAND_NEWS.map((news, i) => (
             <span key={i} className="mx-8 text-[10px] font-black uppercase tracking-widest inline-flex items-center">
               <Newspaper className="w-3 h-3 mr-2" /> {news}
@@ -65,16 +67,110 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <button className="hidden md:block bg-white text-black px-4 py-1.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-white/90 transition-colors">
+              <button 
+                onClick={() => setShowContactModal(true)}
+                className="hidden md:block bg-white text-black px-4 py-1.5 rounded text-xs font-bold uppercase tracking-wider hover:bg-white/90 transition-colors"
+              >
                 Contact Sales
               </button>
-              <button className="md:hidden p-2 text-white">
-                <Menu className="w-5 h-5" />
+              <button 
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                className="md:hidden p-2 text-white border border-white/10 hover:bg-white/10 transition-all"
+              >
+                {showMobileMenu ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {showMobileMenu && (
+          <div className="md:hidden bg-black border-b border-white/20 animate-in slide-in-from-top duration-300">
+            <div className="px-4 pt-2 pb-6 space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setShowMobileMenu(false)}
+                  className="flex items-center space-x-4 px-4 py-4 text-sm font-black uppercase tracking-widest border border-white/5 hover:bg-white hover:text-black transition-all"
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.name}</span>
+                </Link>
+              ))}
+              <button 
+                onClick={() => {
+                  setShowMobileMenu(false);
+                  setShowContactModal(true);
+                }}
+                className="w-full mt-4 bg-white text-black px-4 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-white/90 transition-colors"
+              >
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
+
+      {/* Contact Sales Modal */}
+      {showContactModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="bg-black border border-white/20 w-full max-w-md p-8 relative shadow-2xl animate-in zoom-in-95 duration-300">
+            <button 
+              onClick={() => setShowContactModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-white hover:text-black transition-all border border-white/10"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="text-center mb-8">
+              <div className="inline-block bg-white p-3 rounded mb-4">
+                <HardHat className="text-black w-6 h-6" />
+              </div>
+              <h2 className="text-2xl font-black uppercase tracking-tighter">Contact Sales</h2>
+              <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mt-2">Global Logistics & Acquisition</p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="p-4 border border-white/10 hover:border-white transition-colors group">
+                <div className="flex items-center gap-4">
+                  <div className="p-2 bg-white/5 rounded group-hover:bg-white group-hover:text-black transition-colors">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white/40">Call / WhatsApp / SMS</div>
+                    <a href="tel:+250795695555" className="text-lg font-black tracking-tight hover:underline">+250 795 695 555</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 border border-white/10 hover:border-white transition-colors group">
+                <div className="flex items-center gap-4">
+                  <div className="p-2 bg-white/5 rounded group-hover:bg-white group-hover:text-black transition-colors">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] font-black uppercase tracking-widest text-white/40">Email Inquiry</div>
+                    <div className="flex flex-col gap-1">
+                      <a href="mailto:ishimwekevin199@gmail.com" className="text-xs font-black tracking-tight hover:underline truncate">ishimwekevin199@gmail.com</a>
+                      <a href="mailto:ishimwekevin.founder@gmail.com" className="text-xs font-black tracking-tight hover:underline truncate">ishimwekevin.founder@gmail.com</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <button 
+                  onClick={() => window.open('https://wa.me/250795695555', '_blank')}
+                  className="w-full bg-white text-black py-4 text-[10px] font-black uppercase tracking-[0.3em] flex items-center justify-center hover:bg-white/90 transition-all"
+                >
+                  <MessageSquare className="w-4 h-4 mr-2" /> Open WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <main className="flex-grow">
         {children}

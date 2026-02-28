@@ -3,7 +3,8 @@ import {
   Tag, LayoutGrid, Map as MapIcon, Search, MapPin, 
   Building2, ShieldCheck, ShieldAlert, Phone, User, 
   Landmark, HelpCircle, Shield, ArrowLeft, Download, 
-  Maximize2, Share2, Check, ExternalLink, Ruler, Map as MapIconSmall
+  Maximize2, Share2, Check, ExternalLink, Ruler, Map as MapIconSmall,
+  Tractor
 } from 'lucide-react';
 import { LAND_PLOTS } from '../constants';
 import MapView from '../components/MapView';
@@ -169,6 +170,119 @@ const LandPlots: React.FC = () => {
                         <Check className="w-3 h-3 mr-3 text-white/40" /> {feature}
                       </div>
                     ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-6 border-b border-white/10 pb-4">Neighborhood & Surroundings</h4>
+                    <div className="space-y-4">
+                      {plot.zoning === 'Residential' && (
+                        <>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><Building2 className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">Educational Hubs</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">Top-tier schools within 2km radius</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><ShieldCheck className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">Security Zone</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">24/7 Patrol & High-safety index neighborhood</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                      {plot.zoning === 'Commercial' && (
+                        <>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><ExternalLink className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">High Traffic Roads</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">Direct access to major arterial highways</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><Landmark className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">Business District</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">Surrounded by corporate HQs and retail hubs</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                      {plot.zoning === 'Industrial' && (
+                        <>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><Tractor className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">Logistics Corridor</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">Heavy vehicle access and warehouse proximity</div>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-3">
+                            <div className="mt-1 p-1 bg-white/10 rounded"><ExternalLink className="w-3 h-3" /></div>
+                            <div>
+                              <div className="text-[10px] font-black uppercase tracking-widest">Utility Infrastructure</div>
+                              <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">High-capacity power and water supply lines</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1 p-1 bg-white/10 rounded"><MapPin className="w-3 h-3" /></div>
+                        <div>
+                          <div className="text-[10px] font-black uppercase tracking-widest">Local Landmarks</div>
+                          <div className="text-[8px] font-medium text-white/40 uppercase tracking-widest">{plot.landmarks.join(', ')}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-6 border-b border-white/10 pb-4">Owner Benefits</h4>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                        <div className="text-[10px] font-black uppercase tracking-widest mb-2 flex items-center gap-2">
+                          <Check className="w-3 h-3 text-white" /> Appreciation Potential
+                        </div>
+                        <p className="text-[8px] font-medium text-white/40 uppercase tracking-widest leading-relaxed">
+                          Projected 15% annual value increase based on current {plot.location} development trends.
+                        </p>
+                      </div>
+                      {plot.zoning === 'Residential' && (
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                          <div className="text-[10px] font-black uppercase tracking-widest mb-2 flex items-center gap-2">
+                            <Check className="w-3 h-3 text-white" /> Family Centric
+                          </div>
+                          <p className="text-[8px] font-medium text-white/40 uppercase tracking-widest leading-relaxed">
+                            Ideal for multi-generational living with proximity to parks and healthcare.
+                          </p>
+                        </div>
+                      )}
+                      {plot.zoning === 'Commercial' && (
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                          <div className="text-[10px] font-black uppercase tracking-widest mb-2 flex items-center gap-2">
+                            <Check className="w-3 h-3 text-white" /> Revenue Generation
+                          </div>
+                          <p className="text-[8px] font-medium text-white/40 uppercase tracking-widest leading-relaxed">
+                            High rental yield potential for retail or office space developments.
+                          </p>
+                        </div>
+                      )}
+                      {plot.zoning === 'Industrial' && (
+                        <div className="p-4 bg-white/5 border border-white/10 rounded-sm">
+                          <div className="text-[10px] font-black uppercase tracking-widest mb-2 flex items-center gap-2">
+                            <Check className="w-3 h-3 text-white" /> Operational Efficiency
+                          </div>
+                          <p className="text-[8px] font-medium text-white/40 uppercase tracking-widest leading-relaxed">
+                            Optimized for supply chain management and manufacturing logistics.
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
