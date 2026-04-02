@@ -7,6 +7,7 @@ import Equipment from './pages/Equipment';
 import LandPlots from './pages/LandPlots';
 import ProjectAdvisor from './pages/ProjectAdvisor';
 import News from './pages/News';
+import Irembo from './pages/Irembo';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <Route path="/landplots" element={<LandPlots />} />
           <Route path="/advisor" element={<ProjectAdvisor />} />
           <Route path="/news" element={<News />} />
+          <Route path="/irembo" element={<Irembo />} />
         </Routes>
       </Layout>
     </Router>

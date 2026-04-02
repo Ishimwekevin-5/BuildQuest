@@ -151,9 +151,9 @@ export const LAND_PLOTS: LandPlot[] = [
 ];
 
 export const LAND_NEWS = [
-  "New industrial zoning approved for Houston Port Terminal District.",
-  "Sunnyvale Heights Lot price updated: Now $450,000.",
-  "BuildQuest announces new AI-driven land valuation tool.",
-  "Commercial interest rises in Denver's South Broadway corridor.",
-  "Global construction logistics index reaches record high in Q1 2026."
+  "Ababitsi b'Inyandikompamo z'Ubutaka bashya barahiriye kuzatunganya akazi.",
+  "The Ghana Institution of Surveyors visited the NLA.",
+  "Inyandikompeshabubasha zabaye zihagaritswe by’agateganyo muri serivisi z’ubutaka.",
+  "Rwanda National Land Authority announces new digital land transaction protocols.",
+  "Global surveyors delegation visits Kigali for strategic mapping partnership."
 ];

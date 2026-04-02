@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { HardHat, Tractor, Mountain, MessageSquareCode, Menu, Newspaper, X, Phone, Mail, MessageSquare } from 'lucide-react';
+import { HardHat, Tractor, Mountain, MessageSquareCode, Menu, Newspaper, X, Phone, Mail, MessageSquare, Globe } from 'lucide-react';
 import { LAND_NEWS } from '../constants';
 
 interface LayoutProps {
@@ -18,6 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Land Plots', path: '/landplots', icon: Mountain },
     { name: 'AI Advisor', path: '/advisor', icon: MessageSquareCode },
     { name: 'News', path: '/news', icon: Newspaper },
+    { name: 'Irembo', path: '/irembo', icon: Globe },
   ];
 
   return (
@@ -46,7 +47,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <div className="bg-white p-1.5 rounded">
                 <HardHat className="text-black w-5 h-5" />
               </div>
-              <span className="text-lg font-bold text-white tracking-tight uppercase">BuildQuest</span>
+              <span className="text-lg font-bold text-white tracking-tight uppercase">NLA News Hub</span>
             </Link>
             
             <div className="hidden md:flex space-x-6">
@@ -184,10 +185,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="bg-white p-1.5 rounded">
                   <HardHat className="text-black w-5 h-5" />
                 </div>
-                <span className="text-xl font-black text-white uppercase tracking-tighter">BuildQuest</span>
+                <span className="text-xl font-black text-white uppercase tracking-tighter">NLA News Hub</span>
               </div>
               <p className="max-w-sm text-sm text-white/60 leading-relaxed font-medium">
-                The global infrastructure for professional construction logistics. High performance talent, machinery, and strategic land acquisition.
+                Official news and intelligence portal for the Rwanda National Land Authority. Stay updated with land transactions and mapping developments.
               </p>
             </div>
             <div>
@@ -208,7 +209,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </div>
           <div className="border-t border-white/5 mt-16 pt-8 text-center text-[10px] text-white/40 font-bold uppercase tracking-[0.2em]">
-            © BuildQuest Logistics — Established 2026
+            © NLA News Hub — Official Portal 2026
           </div>
         </div>
       </footer>

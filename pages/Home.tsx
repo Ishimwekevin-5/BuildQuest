@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, HardHat, Tractor, Mountain, MoveRight } from 'lucide-react';
+import { ArrowRight, HardHat, Tractor, Mountain, MoveRight, Newspaper, Globe } from 'lucide-react';
 
 const Home: React.FC = () => {
   return (
@@ -15,17 +15,17 @@ const Home: React.FC = () => {
               <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>
             </div>
             <h1 className="text-7xl md:text-9xl font-black text-white leading-[0.9] tracking-tighter mb-10 uppercase">
-              Build <br /> Better.
+              Land <br /> Intelligence.
             </h1>
             <p className="text-xl md:text-2xl text-white/80 font-medium max-w-2xl mb-12 leading-tight">
-              A professional-grade marketplace for elite engineers, heavy equipment, and prime industrial land plots.
+              A professional-grade portal for land transactions, mapping, and real-time intelligence from the Rwanda National Land Authority.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/advisor" className="bg-white text-black px-10 py-5 rounded-none font-bold uppercase tracking-widest flex items-center justify-center hover:bg-white/90 transition-all">
-                Project Advisor <MoveRight className="ml-3 w-5 h-5" />
+              <Link to="/irembo" className="bg-white text-black px-10 py-5 rounded-none font-bold uppercase tracking-widest flex items-center justify-center hover:bg-white/90 transition-all">
+                Irembo Land Services <MoveRight className="ml-3 w-5 h-5" />
               </Link>
-              <Link to="/engineers" className="bg-black text-white border-2 border-white px-10 py-5 rounded-none font-bold uppercase tracking-widest flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                Browse Assets
+              <Link to="/news" className="bg-black text-white border-2 border-white px-10 py-5 rounded-none font-bold uppercase tracking-widest flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                Latest NLA News
               </Link>
             </div>
           </div>
@@ -69,14 +69,14 @@ const Home: React.FC = () => {
 
             <div className="group border-r border-b border-white/20 p-12 hover:bg-white hover:text-black transition-all duration-500">
               <div className="mb-10">
-                <Mountain className="w-10 h-10" />
+                <Globe className="w-10 h-10" />
               </div>
-              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Land Plots</h3>
+              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4">Irembo Services</h3>
               <p className="text-sm font-medium opacity-60 group-hover:opacity-80 mb-10 leading-relaxed">
-                Premium land acquisition opportunities. Residential, commercial, and industrial zoning data included.
+                Direct integration with Rwanda's official government portal for land transfers, registrations, and more.
               </p>
-              <Link to="/landplots" className="inline-flex items-center text-xs font-black uppercase tracking-widest">
-                View Maps <ArrowRight className="ml-2 w-4 h-4" />
+              <Link to="/irembo" className="inline-flex items-center text-xs font-black uppercase tracking-widest">
+                Access Portal <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -88,19 +88,19 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           <div>
             <div className="text-6xl font-black mb-2 tracking-tighter">0</div>
-            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Engineers</div>
-          </div>
-          <div>
-            <div className="text-6xl font-black mb-2 tracking-tighter">$0</div>
-            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Market Cap</div>
+            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Land Records</div>
           </div>
           <div>
             <div className="text-6xl font-black mb-2 tracking-tighter">0</div>
-            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Machinery</div>
+            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Active Users</div>
           </div>
           <div>
             <div className="text-6xl font-black mb-2 tracking-tighter">0</div>
-            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Deployments</div>
+            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Mappings</div>
+          </div>
+          <div>
+            <div className="text-6xl font-black mb-2 tracking-tighter">0</div>
+            <div className="text-[10px] font-black uppercase tracking-[0.3em] opacity-50">Transactions</div>
           </div>
         </div>
       </section>

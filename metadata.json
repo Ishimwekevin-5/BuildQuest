@@ -1,6 +1,6 @@
 {
-  "name": "BuildQuest",
-  "description": "A premier marketplace for construction professionals, heavy machinery, and prime land plots, featuring an AI-driven project advisor.",
+  "name": "NLA News Hub",
+  "description": "Stay updated with the latest news and land transaction updates from the Rwanda National Land Authority (NLA).",
   "requestFramePermissions": [
     "geolocation"
   ]
